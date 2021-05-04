@@ -5,14 +5,14 @@ import useStyles from "./styles";
 
 import { useTheme, Grid, useMediaQuery } from "@material-ui/core";
 
-import { mobileOptions } from "../../data/options";
-import CallToAction from "../../util/CallToAction";
-import BackArrow from "./BackArrow";
-import Header from "./Header";
-import ForwardArrow from "./ForwardArrow";
-import Integration from "./Integration";
-import SimultaneousPlatform from "./SimultaneousPlatform";
-import BottomIcons from "./BottomIcons";
+import { mobileOptions } from "../../../data/options";
+import CallToAction from "../../../util/CallToAction";
+import BackArrow from "../BackArrow";
+import Header from "../Header";
+import ForwardArrow from "../ForwardArrow";
+import Integration from "../Integration";
+import SimultaneousPlatform from "../SimultaneousPlatform";
+import BottomIcons from "../BottomIcons";
 
 export default function MobileApps(props) {
   const classes = useStyles();

@@ -3,16 +3,16 @@ import React from "react";
 import { useTheme, Grid, useMediaQuery } from "@material-ui/core";
 
 import useStyles from "./styles";
-import CallToAction from "../../util/CallToAction";
-import BackArrow from "./BackArrow";
-import CustomBlock from "./CustomBlock";
-import ForwardArrow from "./ForwardArrow";
-import IconsBlock from "./IconsBlock";
-import DigitalDocuments from "./DigitalDocuments";
-import Scale from "./Scale";
-import RootCause from "./RootCause";
-import Automation from "./Automation";
-import UserExperience from "./UserExperience";
+import CallToAction from "../../../util/CallToAction";
+import BackArrow from "../BackArrow";
+import CustomBlock from "../CustomBlock";
+import ForwardArrow from "../ForwardArrow";
+import IconsBlock from "../IconsBlock";
+import DigitalDocuments from "../DigitalDocuments";
+import Scale from "../Scale";
+import RootCause from "../RootCause";
+import Automation from "../Automation";
+import UserExperience from "../UserExperience";
 
 export default function CustomSoftware(props) {
   const classes = useStyles();
