@@ -1,6 +1,6 @@
 import React from "react";
 
-import footerAdornment from "../../../assets/Footer Adornment.svg";
+import footerAdornment from "../../../../assets/Footer Adornment.svg";
 
 import { Grid, Hidden } from "@material-ui/core";
 

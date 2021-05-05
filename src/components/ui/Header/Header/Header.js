@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import useStyles from "./styles";
-import ElevationScroll from "./ElevationScroll";
-import { menuOptions } from "../../../data/options";
-import HeaderTabs from "./tabs";
-import Drawer from "./drawer";
+import ElevationScroll from "../ElevationScroll";
+import { menuOptions } from "../../../../data/options";
+import HeaderTabs from "../tabs";
+import Drawer from "../drawer";
 
-import logo from "../../../assets/logo.svg";
+import logo from "../../../../assets/logo.svg";
 
 import {
   AppBar,
