@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import useStyles from "./styles";
 
 import { Grid, Typography, useMediaQuery, useTheme } from "@material-ui/core";
 
-import PhoneBlock from "./PhoneBlock";
-import CustomSoftware from "./CustomSoftware";
-import Website from "./Website";
+import PhoneBlock from "../PhoneBlock";
+import CustomSoftware from "../CustomSoftware";
+import Website from "../Website";
 
 export default function Services(props) {
   const classes = useStyles();

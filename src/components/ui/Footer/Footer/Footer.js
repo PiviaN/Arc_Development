@@ -6,8 +6,8 @@ import { Grid, Hidden } from "@material-ui/core";
 
 import useStyles from "./styles";
 
-import GridItems from "./GridItems";
-import GridIcons from "./GridIcons";
+import GridItems from "../GridItems";
+import GridIcons from "../GridIcons";
 
 export default function Footer(props) {
   const classes = useStyles();

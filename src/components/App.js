@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { ThemeProvider } from "@material-ui/styles";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Header from "./ui/Header/Header";
+import Header from "./ui/Header/Header/Header";
 import theme from "./theme/Theme";
-import Footer from "./ui/Footer/Footer";
+import Footer from "./ui/Footer/Footer/Footer";
 import LandingPage from "./LandingPage/LandingPage/LandingPage";
-import Services from "./Services/Services";
+import Services from "./Services/Services/Services";
 import CustomSoftware from "./CustomSoftware/CustomSoftware/CustomSoftware";
 import MobileApps from "./MobileApps/MobileApps/MobileApps";
-import Websites from "./Websites/Websites";
+import Websites from "./Websites/Websites/Websites";
 import Revolution from "./Revolution/Revolution/Revolution";
 import About from "./About/About/About";
 import Contact from "./Contact/Contact/Contact";

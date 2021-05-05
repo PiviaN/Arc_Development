@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useTheme, Grid, Typography, useMediaQuery } from "@material-ui/core";
+import { useTheme, Grid, useMediaQuery } from "@material-ui/core";
 
 import useStyles from "./styles";
 

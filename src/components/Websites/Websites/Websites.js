@@ -3,12 +3,12 @@ import React from "react";
 import { useTheme, Grid, useMediaQuery } from "@material-ui/core";
 
 import useStyles from "./styles";
-import WebsiteDev from "./WebsiteDev";
-import CallToAction from "../../util/CallToAction";
-import Analytics from "./Analytics";
-import Ecommerce from "./Ecommerce";
-import Outreach from "./Outreach";
-import SearchEngine from "./SearchEngine";
+import WebsiteDev from "../WebsiteDev";
+import CallToAction from "../../../util/CallToAction";
+import Analytics from "../Analytics";
+import Ecommerce from "../Ecommerce";
+import Outreach from "../Outreach";
+import SearchEngine from "../SearchEngine";
 
 export default function Websites(props) {
   const classes = useStyles();
