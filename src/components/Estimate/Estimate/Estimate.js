@@ -4,28 +4,28 @@ import useStyles from "./styles";
 
 import { useTheme, Grid, useMediaQuery, Snackbar } from "@material-ui/core";
 
-import backArrow from "../../assets/backArrow.svg";
-import backArrowDisabled from "../../assets/backArrowDisabled.svg";
-import forwardArrow from "../../assets/forwardArrow.svg";
-import forwardArrowDisabled from "../../assets/forwardArrowDisabled.svg";
+import backArrow from "../../../assets/backArrow.svg";
+import backArrowDisabled from "../../../assets/backArrowDisabled.svg";
+import forwardArrow from "../../../assets/forwardArrow.svg";
+import forwardArrowDisabled from "../../../assets/forwardArrowDisabled.svg";
 
-import { defaultQuestions } from "../../data/questions";
+import { defaultQuestions } from "../../../data/questions";
 
-import { nextQuestion, previousQuestion } from "./functions/changeQuestions";
+import { nextQuestion, previousQuestion } from "../functions/changeQuestions";
 import {
   backButtonDisabled,
   forwardButtonDisabled,
-} from "./functions/arrowDisabled";
-import estimateDisabled from "./functions/estimateDisabled";
-import handleSelect from "./functions/handleSelect";
-import getTotal from "./functions/getTotal";
-import getPlatforms from "./functions/getPlatforms";
-import { getFeatures, getCustomFeatures } from "./functions/features";
-import getCategory from "./functions/getCategory";
+} from "../functions/arrowDisabled";
+import estimateDisabled from "../functions/estimateDisabled";
+import handleSelect from "../functions/handleSelect";
+import getTotal from "../functions/getTotal";
+import getPlatforms from "../functions/getPlatforms";
+import { getFeatures, getCustomFeatures } from "../functions/features";
+import getCategory from "../functions/getCategory";
 
-import EstimateAnimation from "./EstimateAnimation";
-import QuestionsBoxes from "./QuestionsBoxes";
-import DialogBox from "./DialogBox";
+import EstimateAnimation from "../EstimateAnimation";
+import QuestionsBoxes from "../QuestionsBoxes";
+import DialogBox from "../DialogBox";
 
 export default function Estimate() {
   const classes = useStyles();

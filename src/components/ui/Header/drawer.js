@@ -10,9 +10,9 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import { iOS } from '../../../data/matches'
-
 const Drawer = (props) => {
+  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+
   return (
     <>
       <SwipeableDrawer

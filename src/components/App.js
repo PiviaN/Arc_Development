@@ -13,7 +13,7 @@ import Websites from "./Websites/Websites/Websites";
 import Revolution from "./Revolution/Revolution/Revolution";
 import About from "./About/About/About";
 import Contact from "./Contact/Contact/Contact";
-import Estimate from "./Estimate/Estimate";
+import Estimate from "./Estimate/Estimate/Estimate";
 
 function App(props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
