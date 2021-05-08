@@ -98,7 +98,6 @@ const Technology = (props) => {
       <Grid item container justify={props.matchesMD ? "center" : "flex-end"} lg>
         <Lottie
           options={revolutionOptions}
-          isStopped={true}
           style={{ maxWidth: "40em", margin: 0 }}
         />
       </Grid>
