@@ -14,7 +14,6 @@ export default function sendEstimate(
   customFeatures,
   users,
   setAlert,
-  setAlertMesssage,
   setDialogOpen
 ) {
   setLoading(true);
@@ -41,13 +40,11 @@ export default function sendEstimate(
     .then((res) => {
       setLoading(false);
       setAlert({ open: true, color: "#4BB543" });
-      setAlertMesssage("Message sent successfully!");
       setDialogOpen(false);
     })
     .catch((err) => {
       setLoading(false);
       setAlert({ open: true, color: "#FF3232" });
-      setAlertMesssage("Something went wrong! Please try again.");
       console.error(err);
     });
 }

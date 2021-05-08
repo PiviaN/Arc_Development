@@ -55,7 +55,6 @@ export default function Estimate() {
   const [category, setCategory] = useState("");
 
   const [alert, setAlert] = useState({ open: false, color: "" });
-  const [alertMessage, setAlertMesssage] = useState("");
 
   const [loading, setLoading] = useState(false);
 
@@ -120,7 +119,6 @@ export default function Estimate() {
         category={category}
         setLoading={setLoading}
         setAlert={setAlert}
-        setAlertMessage={setAlertMesssage}
         loading={loading}
       />
       <Snackbar
@@ -131,7 +129,11 @@ export default function Estimate() {
           },
         }}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        message={alertMessage}
+        message={
+          alert.color === "#4BB543"
+            ? "Message sent successfully!"
+            : "Something went wrong! Please try again."
+        }
         autoHideDuration={4000}
         onClose={() => setAlert(false)}
       />

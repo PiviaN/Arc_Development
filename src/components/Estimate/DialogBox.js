@@ -38,7 +38,15 @@ const DialogBox = (props) => {
             setPhoneHelper={props.setPhoneHelper}
             emailHelper={props.emailHelper}
             email={props.email}
-            onChange={onChange}
+            onChange={(event) =>
+              onChange(
+                event,
+                props.setEmail,
+                props.setEmailHelper,
+                props.setPhone,
+                props.setPhoneHelper
+              )
+            }
             phoneHelper={props.phoneHelper}
             phone={props.phone}
             message={props.message}
@@ -84,7 +92,6 @@ const DialogBox = (props) => {
               customFeatures={props.customFeatures}
               users={props.users}
               setAlert={props.setAlert}
-              setAlertMessage={props.setAlertMessage}
               setDialogOpen={props.setDialogOpen}
               phoneHelper={props.phoneHelper}
               emailHelper={props.emailHelper}

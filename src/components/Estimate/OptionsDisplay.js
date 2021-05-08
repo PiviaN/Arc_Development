@@ -5,10 +5,11 @@ import { Grid, Typography, Button } from "@material-ui/core";
 const OptionsDisplay = (props) => {
   return (
     <Grid item container>
-      {props.question.options.map((option) => (
+      {props.question.options.map((option, index) => (
         <Grid
           item
           container
+          key={index}
           component={Button}
           onClick={() =>
             props.handleSelect(

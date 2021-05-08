@@ -27,7 +27,6 @@ const SendEstimate = (props) => {
             props.customFeatures,
             props.users,
             props.setAlert,
-            props.setAlertMesssage,
             props.setDialogOpen
           )
         }
