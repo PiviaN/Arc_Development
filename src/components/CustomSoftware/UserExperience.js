@@ -14,11 +14,8 @@ const UserExperience = (props) => {
       direction={props.matchesSM ? "column" : "row"}
       md
     >
-      <Grid item md>
-        <Lottie
-          options={uxOptions}
-          style={{ maxHeight: 310, maxWidth: 155 }}
-        />
+      <Grid item md style={{ marginBottom: props.matchesSM ? "2em" : null }}>
+        <Lottie options={uxOptions} style={{ maxHeight: 310, maxWidth: 155 }} />
       </Grid>
       <Grid item container direction="column" md>
         <Grid item>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import backArrow from "../../assets/backArrow.svg";
 import forwardArrow from "../../assets/forwardArrow.svg";
@@ -37,7 +37,15 @@ const WebsiteDev = (props) => {
       </Hidden>
       <Grid item container direction="column" className={props.classes.heading}>
         <Grid item>
-          <Typography align={props.matchesMD ? "center" : undefined} variant="h2">
+          <Typography
+            align={props.matchesMD ? "center" : undefined}
+            variant="h2"
+            style={{
+              lineHeight: props.matchesXS ? 1.1 : null,
+              marginBottom: props.matchesXS ? "0.5em" : null,
+              fontSize: "2.25em",
+            }}
+          >
             Website Development
           </Typography>
         </Grid>

@@ -35,7 +35,7 @@ export default function MobileApps(props) {
           classes={classes}
           setSelectedIndex={props.setSelectedIndex}
         />
-        <Header classes={classes} matchesMD={matchesMD} />
+        <Header classes={classes} matchesMD={matchesMD} matchesXS={matchesXS} />
         <ForwardArrow
           classes={classes}
           setSelectedIndex={props.setSelectedIndex}

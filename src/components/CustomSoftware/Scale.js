@@ -14,7 +14,7 @@ const Scale = (props) => {
       direction={props.matchesSM ? "column" : "row"}
       md
     >
-      <Grid item md>
+      <Grid item md style={{ marginBottom: props.matchesSM ? "2em" : null }}>
         <Lottie
           options={scaleOptions}
           style={{ maxHeight: 260, maxWidth: 280 }}

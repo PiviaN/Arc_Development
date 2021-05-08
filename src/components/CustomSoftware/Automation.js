@@ -47,7 +47,7 @@ const Automation = (props) => {
           </Typography>
         </Grid>
       </Grid>
-      <Grid item md>
+      <Grid item md style={{ marginTop: props.matchesSM ? "2em" : null }}>
         <Lottie
           options={automationOptions}
           style={{ maxHeight: 290, maxWidth: 280 }}

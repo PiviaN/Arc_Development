@@ -41,6 +41,7 @@ export default function LandingPage(props) {
         theme={theme}
         setSelectedIndex={props.setSelectedIndex}
         matchesSM={matchesSM}
+        matchesXS={matchesXS}
       />
       <TRBlock classes={classes} setValue={props.setValue} theme={theme} />
       <InformationBlock

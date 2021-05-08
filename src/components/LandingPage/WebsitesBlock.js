@@ -28,7 +28,8 @@ const WebsitesBlock = (props) => {
             Reach More. Discover More. Sell More.
           </Typography>
           <Typography variant="subtitle1">
-            Optimize for Search Engines, built for speed.
+            Optimize for Search Engines, {props.matchesXS && <br />}built for
+            speed.
           </Typography>
           <Button
             component={Link}

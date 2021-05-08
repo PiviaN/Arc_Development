@@ -20,7 +20,7 @@ const QuestionsBoxes = (props) => {
         .filter((question) => question.active)
         .map((question, index) => (
           <React.Fragment key={index}>
-            <QuestionsTitles question={question} />
+            <QuestionsTitles question={question} matchesSM={props.matchesSM} />
             <OptionsDisplay
               question={question}
               handleSelect={props.handleSelect}
