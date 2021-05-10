@@ -7,7 +7,7 @@ const HeaderTabs = (props) => {
   return (
     <React.Fragment>
       <Tabs
-        value={props.value}
+        value={props.value} // p p
         onChange={props.handleChange}
         className={props.classes.tabContainer}
         indicatorColor="primary"
@@ -41,7 +41,9 @@ const HeaderTabs = (props) => {
         open={props.openMenu}
         onClose={props.handleClose}
         classes={{ paper: props.classes.menu }}
-        MenuListProps={{ onMouseLeave: props.handleClose }}
+        MenuListProps={{
+          onMouseLeave: props.handleClose,
+        }}
         elevation={0}
         style={{ zIndex: 1302 }}
         keepMounted
@@ -57,7 +59,7 @@ const HeaderTabs = (props) => {
               props.setValue(1);
               props.handleClose();
             }}
-            selected={i === props.selectedIndex && props.value === 1} //
+            selected={i === props.selectedIndex && props.value === 1}
           >
             {option.name}
           </MenuItem>

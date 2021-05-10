@@ -14,7 +14,7 @@ const Drawer = (props) => {
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   return (
-    <>
+    <React.Fragment>
       <SwipeableDrawer
         disableBackdropTransition={!iOS}
         disableDiscovery={iOS}
@@ -27,22 +27,19 @@ const Drawer = (props) => {
         <List disablePadding>
           {props.routes.map((route) => (
             <ListItem
-              key={`${route}${route.activeIndex}`}
-              onClick={() => {
-                props.setOpenDrawer(false);
-                props.setValue(route.activeIndex); //props of props
-              }}
               divider
+              key={`${route}${route.activeIndex}`}
               button
               component={Link}
               to={route.link}
-              selected={props.value === route.activeIndex} // props of props
+              selected={props.value === route.activeIndex}
               classes={{ selected: props.classes.drawerItemSelected }}
+              onClick={() => {
+                props.setOpenDrawer(false);
+                props.setValue(route.activeIndex);
+              }}
             >
-              <ListItemText
-                disableTypography
-                className={props.classes.drawerItem}
-              >
+              <ListItemText className={props.classes.drawerItem} disableTypography>
                 {route.name}
               </ListItemText>
             </ListItem>
@@ -50,22 +47,19 @@ const Drawer = (props) => {
           <ListItem
             onClick={() => {
               props.setOpenDrawer(false);
-              props.setValue(5); //props of props
+              props.setValue(5);
             }}
             divider
             button
+            component={Link}
             classes={{
               root: props.classes.drawerItemEstimate,
               selected: props.classes.drawerItemSelected,
             }}
-            component={Link}
             to="/estimate"
-            selected={props.value === 5} //props of props
+            selected={props.value === 5}
           >
-            <ListItemText
-              className={props.classes.drawerItem}
-              disableTypography
-            >
+            <ListItemText className={props.classes.drawerItem} disableTypography>
               Free Estimate
             </ListItemText>
           </ListItem>
@@ -78,7 +72,7 @@ const Drawer = (props) => {
       >
         <MenuIcon className={props.classes.drawerIcon} />
       </IconButton>
-    </>
+    </React.Fragment>
   );
 };
 

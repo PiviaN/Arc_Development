@@ -87,7 +87,7 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <ElevationScroll>
-        <AppBar position="fixed" className={classes.appBar}>
+        <AppBar position="fixed" className={classes.appbar}>
           <Toolbar disableGutters>
             <Button
               component={Link}
@@ -96,7 +96,7 @@ export default function Header(props) {
               onClick={() => props.setValue(0)}
               className={classes.logoContainer}
             >
-              <img src={logo} alt="company logo" className={classes.logo} />
+              <img src={logo} alt="company logo" className={classes.logo} src={logo} />
             </Button>
             {matchesMD ? (
               <Drawer

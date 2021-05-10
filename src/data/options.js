@@ -8,27 +8,22 @@ import technologyAnimation from "../animations/technologyAnimation/data.json";
 import estimateAnimation from "../animations/estimateAnimation/data.json";
 
 export const menuOptions = [
+  { name: "Services", link: "/services", activeIndex: 1, selectedIndex: 0 },
   {
-    link: "/services",
-    name: "Services",
-    activeIndex: 1,
-    selectedIndex: 0,
-  },
-  {
-    link: "/customsoftware",
     name: "Custom Software Development",
+    link: "/customsoftware",
     activeIndex: 1,
     selectedIndex: 1,
   },
   {
-    link: "/mobileapps",
     name: "iOS/Android App Development",
+    link: "/mobileapps",
     activeIndex: 1,
     selectedIndex: 2,
   },
   {
+    name: "Website Development",
     link: "/websites",
-    name: "websites",
     activeIndex: 1,
     selectedIndex: 3,
   },
