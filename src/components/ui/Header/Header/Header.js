@@ -23,7 +23,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import useStyles from "./styles";
 
-import logo from "../../../assets/logo.svg";
+import logo from "../../../../assets/logo.svg";
 
 function ElevationScroll(props) {
   const { children } = props;
