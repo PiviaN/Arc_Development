@@ -96,7 +96,7 @@ export default function Header(props) {
               onClick={() => props.setValue(0)}
               className={classes.logoContainer}
             >
-              <img src={logo} alt="company logo" className={classes.logo} src={logo} />
+              <img src={logo} alt="company logo" className={classes.logo} />
             </Button>
             {matchesMD ? (
               <Drawer
