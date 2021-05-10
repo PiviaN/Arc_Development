@@ -53,7 +53,7 @@ const DialogBox = (props) => {
           matchesXS={props.matchesXS}
           message={props.message}
           setMessage={props.setMessage}
-          classes={props.message}
+          classes={props.classes}
           phoneHelper={props.phoneHelper}
           phone={props.phone}
         />
