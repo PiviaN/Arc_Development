@@ -1,30 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import useStyles from "./styles";
-import ElevationScroll from "../ElevationScroll";
-import { menuOptions } from "../../../../data/options";
-import HeaderTabs from "../HeaderTabs";
-import Drawer from "../Drawer";
-
-import logo from "../../../../assets/logo.svg";
-
 import {
   AppBar,
   Toolbar,
-  useTheme,
+  useScrollTrigger,
+  Tabs,
+  Tab,
   Button,
+  Menu,
+  MenuItem,
   useMediaQuery,
+  SwipeableDrawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  useTheme
 } from "@material-ui/core";
+
+import MenuIcon from "@material-ui/icons/Menu";
+
+import useStyles from "./styles";
+
+import logo from "../../assets/logo.svg";
+
+function ElevationScroll(props) {
+  const { children } = props;
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
 
 export default function Header(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
 
+  const [openDrawer, setOpenDrawer] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
-  const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleChange = (e, newValue) => {
     props.setValue(newValue);
@@ -35,16 +57,38 @@ export default function Header(props) {
     setOpenMenu(true);
   };
 
-  const handleClose = (e) => {
-    setAnchorEl(null);
-    setOpenMenu(false);
-  };
-
   const handleMenuItemClick = (e, i) => {
     setAnchorEl(null);
     setOpenMenu(false);
     props.setSelectedIndex(i);
   };
+
+  const handleClose = (e) => {
+    setAnchorEl(null);
+    setOpenMenu(false);
+  };
+
+  const menuOptions = [
+    { name: "Services", link: "/services", activeIndex: 1, selectedIndex: 0 },
+    {
+      name: "Custom Software Development",
+      link: "/customsoftware",
+      activeIndex: 1,
+      selectedIndex: 1,
+    },
+    {
+      name: "iOS/Android App Development",
+      link: "/mobileapps",
+      activeIndex: 1,
+      selectedIndex: 2,
+    },
+    {
+      name: "Website Development",
+      link: "/websites",
+      activeIndex: 1,
+      selectedIndex: 3,
+    },
+  ];
 
   const routes = [
     { name: "Home", link: "/", activeIndex: 0 },
@@ -84,6 +128,132 @@ export default function Header(props) {
     });
   }, [props.value, menuOptions, props.selectedIndex, routes, props]);
 
+  const tabs = (
+    <React.Fragment>
+      <Tabs
+        value={props.value}
+        onChange={handleChange}
+        className={classes.tabContainer}
+        indicatorColor="primary"
+      >
+        {routes.map((route, index) => (
+          <Tab
+            key={`${route}${index}`}
+            className={classes.tab}
+            component={Link}
+            to={route.link}
+            label={route.name}
+            aria-owns={route.ariaOwns}
+            aria-haspopup={route.ariaPopup}
+            onMouseOver={route.mouseOver}
+          />
+        ))}
+      </Tabs>
+      <Button
+        component={Link}
+        to="/estimate"
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        onClick={() => props.setValue(5)}
+      >
+        Free Estimate
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        open={openMenu}
+        onClose={handleClose}
+        classes={{ paper: classes.menu }}
+        MenuListProps={{
+          onMouseLeave: handleClose,
+        }}
+        elevation={0}
+        style={{ zIndex: 1302 }}
+        keepMounted
+      >
+        {menuOptions.map((option, i) => (
+          <MenuItem
+            key={`${option}${i}`}
+            component={Link}
+            to={option.link}
+            classes={{ root: classes.menuItem }}
+            onClick={(event) => {
+              handleMenuItemClick(event, i);
+              props.setValue(1);
+              handleClose();
+            }}
+            selected={i === props.selectedIndex && props.value === 1}
+          >
+            {option.name}
+          </MenuItem>
+        ))}
+      </Menu>
+    </React.Fragment>
+  );
+
+  const drawer = (
+    <React.Fragment>
+      <SwipeableDrawer
+        disableBackdropTransition={!iOS}
+        disableDiscovery={iOS}
+        open={openDrawer}
+        onClose={() => setOpenDrawer(false)}
+        onOpen={() => setOpenDrawer(true)}
+        classes={{ paper: classes.drawer }}
+      >
+        <div className={classes.toolbarMargin} />
+        <List disablePadding>
+          {routes.map((route) => (
+            <ListItem
+              divider
+              key={`${route}${route.activeIndex}`}
+              button
+              component={Link}
+              to={route.link}
+              selected={props.value === route.activeIndex}
+              classes={{ selected: classes.drawerItemSelected }}
+              onClick={() => {
+                setOpenDrawer(false);
+                props.setValue(route.activeIndex);
+              }}
+            >
+              <ListItemText className={classes.drawerItem} disableTypography>
+                {route.name}
+              </ListItemText>
+            </ListItem>
+          ))}
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+              props.setValue(5);
+            }}
+            divider
+            button
+            component={Link}
+            classes={{
+              root: classes.drawerItemEstimate,
+              selected: classes.drawerItemSelected,
+            }}
+            to="/estimate"
+            selected={props.value === 5}
+          >
+            <ListItemText className={classes.drawerItem} disableTypography>
+              Free Estimate
+            </ListItemText>
+          </ListItem>
+        </List>
+      </SwipeableDrawer>
+      <IconButton
+        className={classes.drawerIconContainer}
+        onClick={() => setOpenDrawer(!openDrawer)}
+        disableRipple
+      >
+        <MenuIcon className={classes.drawerIcon} />
+      </IconButton>
+    </React.Fragment>
+  );
+
   return (
     <React.Fragment>
       <ElevationScroll>
@@ -96,32 +266,9 @@ export default function Header(props) {
               onClick={() => props.setValue(0)}
               className={classes.logoContainer}
             >
-              <img src={logo} alt="company logo" className={classes.logo} />
+              <img alt="company logo" className={classes.logo} src={logo} />
             </Button>
-            {matchesMD ? (
-              <Drawer
-                openDrawer={openDrawer}
-                setOpenDrawer={setOpenDrawer}
-                classes={classes}
-                routes={routes}
-                setValue={props.setValue}
-                value={props.value}
-              />
-            ) : (
-              <HeaderTabs
-                value={props.value}
-                handleChange={handleChange}
-                routes={routes}
-                setValue={props.setValue}
-                anchorEl={anchorEl}
-                openMenu={openMenu}
-                handleClose={handleClose}
-                menuOptions={menuOptions}
-                handleMenuItemClick={handleMenuItemClick}
-                selectedIndex={props.selectedIndex}
-                classes={classes}
-              />
-            )}
+            {matches ? drawer : tabs}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
