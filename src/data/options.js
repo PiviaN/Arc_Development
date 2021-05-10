@@ -15,7 +15,7 @@ export const menuOptions = [
     selectedIndex: 0,
   },
   {
-    link: "/softwaredevelopment",
+    link: "/customsoftware",
     name: "Custom Software Development",
     activeIndex: 1,
     selectedIndex: 1,

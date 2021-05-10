@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import useStyles from "./styles";
 import ElevationScroll from "../ElevationScroll";
 import { menuOptions } from "../../../../data/options";
-import HeaderTabs from "../tabs";
-import Drawer from "../drawer";
+import HeaderTabs from "../HeaderTabs";
+import Drawer from "../Drawer";
 
 import logo from "../../../../assets/logo.svg";
 
